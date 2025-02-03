@@ -13,7 +13,7 @@ extension Entity {
         let cdPlayer = ModelEntity()
         cdPlayer.name = "cdPlayer"
 
-        let cdPlayerModel = try await Entity(named: "Radio", in: realityKitContentBundle)
+        let cdPlayerModel = try await Entity(named: "CDPlayer", in: realityKitContentBundle)
         cdPlayerModel.name = "cdPlayerModel"
         cdPlayer.addChild(cdPlayerModel)
 
