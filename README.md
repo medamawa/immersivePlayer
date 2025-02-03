@@ -9,14 +9,14 @@
 - アプリのメイン関数
 - ウィンドウやイマーシブビューの管理を行う
 
-### Views
+### /Views
 - viewのファイルがまとまっている
 
-### ViewModels
+### /ViewModels
 - viewの要素を構成するためのロジックがまとまっている
 - entityの初期化、更新の設定などをしている
 
-### ECS
+### /ECS
 - Entity, Component, Systemの設定を行う
 
 
