@@ -20,3 +20,13 @@
 - Entity, Component, Systemの設定を行う
 
 
+### Immersive Playerを起動する流れ
+
+- wantsToPresentImmersiceSpace : イマーシブビューを表示するかどうか
+- immersiveSpaceState : イマーシブビューが表示されている・されていない・遷移中かどうか
+
+1. wantsToPresentImmersiveSpaceがtoggleされる(buttonによってtoggleされる)
+2. immersiveSpaceStateが.openなら閉じる
+3. immersiveSpaceStateが.closeなら.inTransitionにして開く処理を始める
+4. immersiveViewがonApperになったタイミングで.openに変更する
+

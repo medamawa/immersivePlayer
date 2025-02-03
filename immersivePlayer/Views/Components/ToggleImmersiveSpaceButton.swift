@@ -14,8 +14,9 @@ struct ToggleImmersiveSpaceButton: View {
         Button {
             appModel.wantsToPresentImmersiveSpace.toggle()
         } label: {
-            Text(appModel.wantsToPresentImmersiveSpace ? "back" : "immersive")
+            Text(appModel.wantsToPresentImmersiveSpace ? "Close Immersive Space" : "Open Immersive Space")
         }
+        .disabled(appModel.immersiveSpaceState == .inTransition)
     }
 }
 

@@ -16,7 +16,7 @@ final class AppModel {
 
     var playerMode: PlayerMode = .music
 
-    var isPresentingImmersiveSpace = false
+    var immersiveSpaceState: ImmersiveSpaceState = .closed
     var wantsToPresentImmersiveSpace = false
 
     var isTransitioningBetweenPlayerMode = false
@@ -26,4 +26,10 @@ enum PlayerMode: String, CaseIterable {
     case music
     case radio
     case conversation
+}
+
+enum ImmersiveSpaceState {
+    case closed
+    case inTransition
+    case open
 }

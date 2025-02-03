@@ -26,26 +26,38 @@ struct ImmersivePlayerApp: App {
             ImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                 ImmersiveView()
                     .environment(appModel)
+                    .onAppear() {
+                        appModel.immersiveSpaceState = .open
+                    }
+                    .onDisappear() {
+                        appModel.immersiveSpaceState = .closed
+                    }
             }
             .immersionStyle(selection: .constant(.progressive), in: .progressive, .full)
 
         }
         .onChange(of: appModel.wantsToPresentImmersiveSpace) {
-            appModel.isPresentingImmersiveSpace = true
-        }
-        .onChange(of: appModel.isPresentingImmersiveSpace) {
-            Task {
-                if appModel.isPresentingImmersiveSpace {
+            Task { @MainActor in
+                switch appModel.immersiveSpaceState {
+                case .open:
+                    appModel.immersiveSpaceState = .inTransition
+                    await dismissImmersiveSpace()
+
+                case .closed:
+                    appModel.immersiveSpaceState = .inTransition
                     switch await openImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                     case .opened:
-                        appModel.isPresentingImmersiveSpace = true
+                        break
+
                     case .userCancelled, .error:
                         fallthrough
+
                     @unknown default:
-                        appModel.isPresentingImmersiveSpace = false
+                        appModel.immersiveSpaceState = .closed
                     }
-                } else {
-                    await dismissImmersiveSpace()
+
+                case .inTransition:
+                    break
                 }
             }
         }

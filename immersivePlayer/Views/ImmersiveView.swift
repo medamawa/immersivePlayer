@@ -27,12 +27,5 @@ struct ImmersiveView: View {
                 appModel.isTransitioningBetweenPlayerMode = false
             }
         }
-        .onChange(of: appModel.wantsToPresentImmersiveSpace) {
-            if appModel.wantsToPresentImmersiveSpace {
-                appModel.isPresentingImmersiveSpace = true
-            } else {
-                appModel.isPresentingImmersiveSpace = false
-            }
-        }
     }
 }
