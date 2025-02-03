@@ -15,6 +15,9 @@ struct ContentView: View {
             ToggleImmersiveSpaceButton()
 
             Text("Hello, world!")
+
+            ButterflyView()
+                .frame(width: 200, height: 200)
         }
         .padding()
     }
