@@ -18,10 +18,10 @@ extension ImmersiveViewModel {
         let butterfly = try await Entity.makeButterfly()
 
         let circularMotion = CircularMotionComponent(
-            radius: 2.0,
+            radius: 1.0,
             speed: .pi / 4,
             verticalAmplitude: 0.5,
-            verticalFrequency: 0.5
+            verticalFrequency: 0.2
         )
 
         butterfly.components.set(circularMotion)

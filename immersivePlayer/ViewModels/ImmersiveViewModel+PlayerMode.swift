@@ -12,22 +12,32 @@ extension ImmersiveViewModel {
         switch (previous, current) {
         case (.music, .music):
             let butterfly = try await spawnButterfly()
+            let cdPlayer = try await spawnCDPlayer()
+
         case (.music, .radio):
             let butterfly = try await spawnButterfly()
+
         case (.music, .conversation):
             let butterfly = try await spawnButterfly()
+
         case (.radio, .music):
             let butterfly = try await spawnButterfly()
+
         case (.radio, .radio):
             let butterfly = try await spawnButterfly()
+
         case (.radio, .conversation):
             let butterfly = try await spawnButterfly()
+
         case (.conversation, .music):
             let butterfly = try await spawnButterfly()
+
         case (.conversation, .radio):
             let butterfly = try await spawnButterfly()
+
         case (.conversation, .conversation):
             let butterfly = try await spawnButterfly()
+
         }
     }
 }

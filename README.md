@@ -30,3 +30,10 @@
 3. immersiveSpaceStateが.closeなら.inTransitionにして開く処理を始める
 4. immersiveViewがonApperになったタイミングで.openに変更する
 
+### blenderで作成したモデルを読み込む
+
+1. .usdcでエクスポートする
+2. Reality Composer Proを開いて読み込む
+3. .usdcファイルを開いて、env_lightを削除する
+4. シーン(.usdaファイル)を作成して、.usdcを読み込む
+5. 角度などを調整して保存する

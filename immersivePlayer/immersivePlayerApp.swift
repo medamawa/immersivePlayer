@@ -19,9 +19,10 @@ struct ImmersivePlayerApp: App {
     var body: some Scene {
         Group {
             WindowGroup {
-                ContentView(appModel: appModel)
-                    .environment(appModel)
+                MenuView(appModel: appModel)
+                    .fixedSize()
             }
+            .windowResizability(.contentSize)
 
             ImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                 ImmersiveView()

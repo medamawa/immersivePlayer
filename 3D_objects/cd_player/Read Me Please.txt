@@ -1,0 +1,25 @@
+Please read me first:
+
+Model is UV unwrapped with overlapping UVs
+
+
+Model comes in 3 parts:
+
+Flatparts        - use flat shading	
+Smootparts1      - use smooth shading
+Smoothparts2     - use smooth shading
+
+
+For best results, the textures sets are:
+
+Silver - use a shiney/ glossy material
+Transparent  - combine a shiney with a transparent material
+BlackPlasticTex - combine diffuse, glossy/shiney and provided texture
+GreyPlasticTex  - combine diffuse, glossy/shiney and provided texture
+Speaker Tex - Use provided texture
+Screen Tex - Use provided texture
+ShinyPlasticTex - combine diffuse, glossy/shiney and provided texture
+
+Enjoy!
+
+Neil Carpenter

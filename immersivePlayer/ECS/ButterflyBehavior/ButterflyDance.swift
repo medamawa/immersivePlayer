@@ -40,7 +40,7 @@ final class ButterflyDanceSystem: System {
             let newZ = motion.radius * sin(motion.angle)
 
             // サイン波による上下運動（Y軸）
-            let newY = motion.verticalAmplitude * sin(2 * .pi * motion.verticalFrequency * motion.time)
+            let newY = 1.7 + motion.verticalAmplitude * sin(2 * .pi * motion.verticalFrequency * motion.time)
 
             // エンティティの位置を更新
             entity.position = [newX, newY, newZ]
