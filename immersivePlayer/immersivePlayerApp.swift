@@ -26,12 +26,6 @@ struct ImmersivePlayerApp: App {
             ImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                 ImmersiveView()
                     .environment(appModel)
-                    .onAppear {
-                        appModel.immersiveSpaceState = .open
-                    }
-                    .onDisappear {
-                        appModel.immersiveSpaceState = .closed
-                    }
             }
             .immersionStyle(selection: .constant(.progressive), in: .progressive, .full)
 

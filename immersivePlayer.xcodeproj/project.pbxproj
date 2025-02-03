@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC8387132D4DC09B009ED7A2 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CC8387122D4DC09B009ED7A2 /* RealityKitContent */; };
+		CC944BA92D50A60D00E73A7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CC944BA82D50A60500E73A7D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +25,7 @@
 		CC83870D2D4DC09B009ED7A2 /* immersivePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = immersivePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8387112D4DC09B009ED7A2 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		CC8387222D4DC09D009ED7A2 /* immersivePlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = immersivePlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC944BA82D50A60500E73A7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -78,6 +80,7 @@
 				CC8387102D4DC09B009ED7A2 /* Packages */,
 				CC8387252D4DC09D009ED7A2 /* immersivePlayerTests */,
 				CC83870E2D4DC09B009ED7A2 /* Products */,
+				CC944BA82D50A60500E73A7D /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC944BA92D50A60D00E73A7D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
