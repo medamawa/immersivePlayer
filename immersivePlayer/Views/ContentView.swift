@@ -10,9 +10,11 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @Bindable var appModel = AppModel()
+
     var body: some View {
         VStack {
-            ToggleImmersiveSpaceButton()
+            ToggleImmersiveSpaceButton(appModel: appModel)
 
             Text("Hello, world!")
 

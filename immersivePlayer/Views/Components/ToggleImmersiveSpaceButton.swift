@@ -8,43 +8,17 @@
 import SwiftUI
 
 struct ToggleImmersiveSpaceButton: View {
-    @Environment(AppModel.self) var appModel
-
-    @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
-    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    @Bindable var appModel: AppModel
 
     var body: some View {
         Button {
-            Task { @MainActor in
-                switch appModel.immersiveSpaceState {
-                    // close immersive space
-                    case .open:
-                        appModel.immersiveSpaceState = .inTransition
-                        await dismissImmersiveSpace()
-
-                    // open immersive space
-                    case .closed:
-                        appModel.immersiveSpaceState = .inTransition
-                        switch await openImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
-                            case .opened:
-                                break
-
-                            // error handling
-                            case .userCancelled, .error:
-                                fallthrough
-                            @unknown default:
-                                appModel.immersiveSpaceState = .closed
-                        }
-
-                    // no action
-                    case .inTransition:
-                        break
-                }
-            }
+            appModel.wantsToPresentImmersiveSpace.toggle()
         } label: {
-            Text(appModel.immersiveSpaceState == .open ? "Hide Immersive Space" : "Show Immersive Space")
+            Text(appModel.wantsToPresentImmersiveSpace ? "back" : "immersive")
         }
-        .disabled(appModel.immersiveSpaceState == .inTransition)
-        .fontWeight(.bold)
     }
+}
+
+#Preview {
+    ToggleImmersiveSpaceButton(appModel: AppModel())
 }

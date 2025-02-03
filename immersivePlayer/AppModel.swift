@@ -14,7 +14,20 @@ final class AppModel {
 
     let immersivePlayerSpaceID = "ImmersivePlayerSpace"
 
+    var playerMode: PlayerMode = .music
+
+    var isPresentingImmersiveSpace = false
+    var wantsToPresentImmersiveSpace = false
+
+    var isTransitioningBetweenPlayerMode = false
+
     var immersiveSpaceState: ImmersiveSpaceState = .closed
+}
+
+enum PlayerMode: String, CaseIterable {
+    case music
+    case radio
+    case conversation
 }
 
 enum ImmersiveSpaceState {
