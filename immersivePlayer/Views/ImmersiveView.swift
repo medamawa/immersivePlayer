@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 @MainActor
 struct ImmersiveView: View {
@@ -17,8 +18,6 @@ struct ImmersiveView: View {
     var body: some View {
         RealityView { content in
             content.add(viewModel.rootEntity)
-
-            
         }
         .onChange(of: appModel.playerMode, initial: true) { old, new in
             Task {

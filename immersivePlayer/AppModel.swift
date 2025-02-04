@@ -16,10 +16,13 @@ final class AppModel {
 
     var playerMode: PlayerMode = .music
 
+    var isPresentingPlayerView = false
     var immersiveSpaceState: ImmersiveSpaceState = .closed
     var wantsToPresentImmersiveSpace = false
 
     var isTransitioningBetweenPlayerMode = false
+
+    var isAudioFileAvailable = false
 }
 
 enum PlayerMode: String, CaseIterable {

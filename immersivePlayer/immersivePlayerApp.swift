@@ -24,6 +24,18 @@ struct ImmersivePlayerApp: App {
             }
             .windowResizability(.contentSize)
 
+            WindowGroup(id: "AudioPlayer") {
+                PlayerView(appModel: appModel)
+                    .fixedSize()
+                    .onAppear() {
+                        appModel.isPresentingPlayerView = true
+                    }
+                    .onDisappear() {
+                        appModel.isPresentingPlayerView = false
+                    }
+            }
+            .windowResizability(.contentSize)
+
             ImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                 ImmersiveView()
                     .environment(appModel)
