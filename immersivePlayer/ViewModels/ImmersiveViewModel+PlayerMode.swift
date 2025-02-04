@@ -13,7 +13,6 @@ extension ImmersiveViewModel {
         case (.music, .music):
             let butterfly = try await spawnButterfly()
             let cdPlayer = try await spawnCDPlayer()
-
         case (.music, .radio):
             let butterfly = try await spawnButterfly()
 

@@ -13,8 +13,6 @@ final class PlayerViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     private var audioPlayer: AVAudioPlayer?
     private var timer: Timer?
     var totalDuration: TimeInterval = 0
-//    var Entity: ModelEntity? = nil
-//    var audioResource: AudioResource? = nil
 
     @Published var currentTime: TimeInterval = 0
     @Published var isPlaying: Bool = false

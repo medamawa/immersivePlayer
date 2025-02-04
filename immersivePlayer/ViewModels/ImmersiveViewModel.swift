@@ -10,4 +10,6 @@ import RealityKit
 @MainActor
 final class ImmersiveViewModel {
     let rootEntity = Entity()
+
+    
 }
