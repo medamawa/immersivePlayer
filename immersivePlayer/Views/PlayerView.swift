@@ -11,6 +11,7 @@ struct PlayerView: View {
     @Bindable var appModel: AppModel
 
     @State private var isPickerPresented = false
+    @State private var previousState: AudioPlayerState?
     @StateObject private var player = AudioPlayer()
 
     var body: some View {
@@ -59,8 +60,17 @@ struct PlayerView: View {
                     get: { player.currentTime },
                     set: { newValue in
                         player.seek(to: newValue)
+                        appModel.currentTime = newValue
                     }),
-                       in: 0...player.totalDuration
+                       in: 0...player.totalDuration,
+                       onEditingChanged: { isEditing in
+                    if isEditing {
+                        previousState = appModel.audioPlayerState
+                        appModel.audioPlayerState = .seek
+                    } else {
+                        appModel.audioPlayerState = previousState ?? .paused
+                    }
+                }
                 )
                 .frame(width: 1000)
                 .padding()
@@ -81,6 +91,7 @@ struct PlayerView: View {
                                 if player.isPlaying {
                                     player.pause()
                                     appModel.audioPlayerState = .paused
+                                    appModel.currentTime = player.currentTime
                                 } else {
                                     player.play()
                                     appModel.audioPlayerState = .playing

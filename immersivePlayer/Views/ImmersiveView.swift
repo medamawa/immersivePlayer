@@ -40,26 +40,26 @@ struct ImmersiveView: View {
                 print("loaded audio")
                 switch appModel.audioPlayerState {
                 case .playing:
-                    audio.play()
+                    audio.play(from: appModel.currentTime)
                 case .paused:
                     audio.pause()
                 case .stopped:
                     audio.stop()
                 case .seek:
-                    return
+                    audio.pause()
                 }
             }
         }
         .onChange(of: appModel.audioPlayerState, initial: true) {
             switch appModel.audioPlayerState {
             case .playing:
-                audio.play()
+                audio.play(from: appModel.currentTime)
             case .paused:
                 audio.pause()
             case .stopped:
                 audio.stop()
             case .seek:
-                return
+                audio.pause()
             }
         }
     }

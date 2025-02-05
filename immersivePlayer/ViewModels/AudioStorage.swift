@@ -27,7 +27,8 @@ final class AudioStorage {
         audioController = audioSource.prepareAudio(audio)
     }
 
-    func play() {
+    func play(from currentTime: TimeInterval) {
+        audioController?.seek(to: Duration.seconds(currentTime))
         audioController?.play()
     }
 
@@ -39,8 +40,8 @@ final class AudioStorage {
         audioController?.stop()
     }
 
-    func seek(to time: Duration) {
-        audioController?.seek(to: time)
+    func seek(to time: TimeInterval) {
+        audioController?.seek(to: Duration.seconds(currentTime))
     }
 
     func fadeOut() async throws {

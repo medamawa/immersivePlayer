@@ -27,6 +27,7 @@ final class AppModel {
     var isAudioFileAvailable = false
     var audioFileURL: URL? = nil
     var audioPlayerState: AudioPlayerState = .stopped
+    var currentTime: TimeInterval = 0
 }
 
 enum PlayerMode: String, CaseIterable {

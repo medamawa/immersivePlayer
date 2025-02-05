@@ -79,6 +79,8 @@ struct ImmersivePlayerApp: App {
                 print("paused")
             } else if appModel.audioPlayerState == .playing {
                 print("playing")
+            } else if appModel.audioPlayerState == .seek {
+                print("seek")
             }
         }
     }
