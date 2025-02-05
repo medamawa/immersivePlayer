@@ -14,6 +14,7 @@ import RealityKit
 final class AppModel {
 
     let immersivePlayerSpaceID = "ImmersivePlayerSpace"
+    var immersionStyle: ImmersionStyle = .mixed
 
     var playerMode: PlayerMode = .music
 

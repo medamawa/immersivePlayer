@@ -46,7 +46,7 @@ struct ImmersivePlayerApp: App {
                         appModel.immersiveSpaceState = .closed
                     }
             }
-            .immersionStyle(selection: .constant(.progressive), in: .progressive, .full)
+            .immersionStyle(selection: $appModel.immersionStyle, in: .mixed, .progressive)
 
         }
         .onChange(of: appModel.wantsToPresentImmersiveSpace) {
