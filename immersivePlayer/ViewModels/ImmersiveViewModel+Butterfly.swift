@@ -25,7 +25,6 @@ extension ImmersiveViewModel {
         )
 
         butterfly.components.set(circularMotion)
-
         butterfly.components.set(ButterflyDanceComponent())
 
         rootEntity.addChild(butterfly)

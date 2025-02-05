@@ -11,7 +11,7 @@ struct PlayerView: View {
     @Bindable var appModel: AppModel
 
     @State private var isPickerPresented = false
-    @StateObject private var player = PlayerViewModel()
+    @StateObject private var player = AudioPlayer()
 
     var body: some View {
 
@@ -25,15 +25,31 @@ struct PlayerView: View {
                 allowedContentTypes: [.audio],
                 allowsMultipleSelection: false
             ) { result in
-                switch result {
-                case .success(let urls):
-                    if let fileURL = urls.first {
-                        player.loadAudio(from: fileURL)
-                        appModel.isAudioFileAvailable = true
+                Task{
+                    switch result {
+                    case .success(let urls):
+                        if let fileURL = urls.first {
+                            player.loadAudio(from: fileURL)
+                            appModel.audioFileURL = fileURL
+                            appModel.isAudioFileAvailable = true
+
+                            // When immersiveView open, AVFoundation player should be muted
+                            switch appModel.immersiveSpaceState {
+                            case .open:
+                                print("muted")
+                                player.mute()
+                            case .closed:
+                                print("unmuted")
+                                player.unmute()
+                            case .inTransition:
+                                break
+                            }
+                        }
+                    case .failure(let error):
+                        print("failed: \(error.localizedDescription)")
+                        appModel.audioFileURL = nil
+                        appModel.isAudioFileAvailable = false
                     }
-                case .failure(let error):
-                    print("failed: \(error.localizedDescription)")
-                    appModel.isAudioFileAvailable = false
                 }
             }
 
@@ -64,8 +80,10 @@ struct PlayerView: View {
                             Button {
                                 if player.isPlaying {
                                     player.pause()
+                                    appModel.audioPlayerState = .paused
                                 } else {
                                     player.play()
+                                    appModel.audioPlayerState = .playing
                                 }
                             } label: {
                                 if player.isPlaying {
@@ -83,11 +101,37 @@ struct PlayerView: View {
 
                         Spacer()
                     }
+
+
+                    if appModel.immersiveSpaceState == .open &&
+                        appModel.isAudioFileAvailable == false &&
+                        appModel.audioFileURL != nil {
+                        LoadingView()
+                            .transition(.opacity)
+                            .zIndex(1)
+                    }
                 }
             }
 
         }
         .padding()
+        .animation(.easeInOut, value: appModel.isAudioFileAvailable)
+        .onChange(of: appModel.immersiveSpaceState, initial: true) {
+            // When immersiveView open, AVFoundation player should be muted
+            switch appModel.immersiveSpaceState {
+            case .open:
+                print("muted")
+                player.mute()
+            case .closed:
+                print("unmuted")
+                player.unmute()
+            case .inTransition:
+                break
+            }
+        }
+        .onChange(of: player.isPlaying) { isPlaying in
+            appModel.audioPlayerState = isPlaying ? .playing : .paused
+        }
 
     }
 

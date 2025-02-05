@@ -11,5 +11,7 @@ import RealityKit
 final class ImmersiveViewModel {
     let rootEntity = Entity()
 
-    
+    let speakerAudio = AudioStorage()
+
+    var speakerEntity: ModelEntity?
 }

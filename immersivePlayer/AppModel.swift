@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealityKit
 
 /// Maintains app-wide state
 @MainActor
@@ -23,16 +24,25 @@ final class AppModel {
     var isTransitioningBetweenPlayerMode = false
 
     var isAudioFileAvailable = false
+    var audioFileURL: URL? = nil
+    var audioPlayerState: AudioPlayerState = .stopped
 }
 
 enum PlayerMode: String, CaseIterable {
     case music
     case radio
-    case conversation
+//    case conversation
 }
 
 enum ImmersiveSpaceState {
     case closed
     case inTransition
     case open
+}
+
+enum AudioPlayerState {
+    case playing
+    case paused
+    case stopped
+    case seek
 }

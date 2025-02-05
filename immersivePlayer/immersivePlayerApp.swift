@@ -74,5 +74,12 @@ struct ImmersivePlayerApp: App {
                 }
             }
         }
+        .onChange(of: appModel.audioPlayerState) {
+            if appModel.audioPlayerState == .paused {
+                print("paused")
+            } else if appModel.audioPlayerState == .playing {
+                print("playing")
+            }
+        }
     }
 }
