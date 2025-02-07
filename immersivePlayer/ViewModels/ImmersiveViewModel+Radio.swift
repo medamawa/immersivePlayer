@@ -10,14 +10,17 @@ import RealityKit
 extension ImmersiveViewModel {
     func spawnRadio() async throws -> ModelEntity {
         let radio = try await createRadio()
-        radio.position = speakerInitialPosition()
-        radio.fadeOpacity(from: 0, to: 1, duration: 1)
+        radio.position = speakerPosition
+        radio.fadeOpacity(from: 0, to: 1, duration: 0.5)
 
         return radio
     }
 
     func createRadio() async throws -> ModelEntity {
         let radio = try await Entity.makeRadio()
+
+        radio.components.set(CollisionComponent(shapes: [.generateBox(width: 0.3, height: 0.2, depth: 0.1)]))
+        radio.components.set(InputTargetComponent())
 
         rootEntity.addChild(radio)
 

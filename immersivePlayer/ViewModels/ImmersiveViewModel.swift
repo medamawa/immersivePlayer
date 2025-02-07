@@ -11,7 +11,8 @@ import RealityKit
 final class ImmersiveViewModel {
     let rootEntity = Entity()
 
-    let speakerAudio = AudioStorage()
-
     var speakerEntity: ModelEntity?
+    let speakerAudio = AudioStorage()
+    var speakerPosition: SIMD3<Float> = [0, 1.5, -1]
+
 }

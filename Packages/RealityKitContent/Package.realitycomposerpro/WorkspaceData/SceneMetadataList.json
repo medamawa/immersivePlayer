@@ -8,8 +8,7 @@
     "objectMetadataList" : [
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root",
-        "Sphere"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -17,7 +16,8 @@
       },
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root"
+        "Root",
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -38,7 +38,8 @@
     "objectMetadataList" : [
       [
         "15D6B445-1144-4A7E-AE7E-AD293AC18CB7",
-        "Root"
+        "Root",
+        "radio"
       ],
       {
         "isExpanded" : true,
@@ -46,8 +47,7 @@
       },
       [
         "15D6B445-1144-4A7E-AE7E-AD293AC18CB7",
-        "Root",
-        "radio"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -103,23 +103,6 @@
       [
         "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
         "root",
-        "Cube_014"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
-        "root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
-        "root",
         "Cube_012"
       ],
       {
@@ -134,11 +117,36 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
+        "root",
+        "Cube_014"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
   "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217" : {
     "objectMetadataList" : [
+      [
+        "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
+        "radio"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
       [
         "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
         "Root",
@@ -151,14 +159,6 @@
       [
         "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
         "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
-        "radio"
       ],
       {
         "isExpanded" : true,
@@ -182,6 +182,15 @@
     "objectMetadataList" : [
       [
         "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
+        "Root",
+        "cd_player"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
         "Root"
       ],
       {
@@ -196,29 +205,11 @@
       {
         "isExpanded" : true,
         "isLocked" : false
-      },
-      [
-        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
-        "Root",
-        "cd_player"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
       }
     ]
   },
   "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A" : {
     "objectMetadataList" : [
-      [
-        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
-        "Root",
-        "cd_player"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
         "Root",
@@ -239,6 +230,15 @@
       {
         "disallowsFraming" : false,
         "isExpanded" : false,
+        "isLocked" : false
+      },
+      [
+        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
+        "Root",
+        "cd_player"
+      ],
+      {
+        "isExpanded" : true,
         "isLocked" : false
       },
       [

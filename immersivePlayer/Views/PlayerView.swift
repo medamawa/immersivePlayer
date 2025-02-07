@@ -81,37 +81,53 @@ struct PlayerView: View {
                     .font(.headline)
 
                 ZStack {
-                    HStack {
+                    HStack() {
+                        Image(systemName: "10.arrow.trianglehead.counterclockwise")
+
+                        Button {
+                            if player.isPlaying {
+                                player.pause()
+                                appModel.audioPlayerState = .paused
+                                appModel.currentTime = player.currentTime
+                            } else {
+                                player.play()
+                                appModel.audioPlayerState = .playing
+                            }
+                        } label: {
+                            if player.isPlaying {
+                                Image(systemName: "pause.fill")
+                            } else {
+                                Image(systemName: "play.fill")
+                            }
+                        }
+                        .disabled(appModel.isAudioFileAvailable == false)
+                        .frame(height: 30)
+                        .padding(10)
+
+                        Image(systemName: "10.arrow.trianglehead.clockwise")
+                    }
+                    .frame(width: 300)
+                    .padding()
+
+                    HStack{
                         Spacer()
 
-                        HStack {
-                            Image(systemName: "backward.end.alt.fill")
-                            
-                            Button {
-                                if player.isPlaying {
-                                    player.pause()
-                                    appModel.audioPlayerState = .paused
-                                    appModel.currentTime = player.currentTime
-                                } else {
-                                    player.play()
-                                    appModel.audioPlayerState = .playing
-                                }
-                            } label: {
-                                if player.isPlaying {
-                                    Image(systemName: "pause.fill")
-                                } else {
-                                    Image(systemName: "play.fill")
-                                }
+                        Button {
+                            if appModel.playerMode == .music {
+                                appModel.playerMode = .radio
+                            } else {
+                                appModel.playerMode = .music
                             }
-                            .disabled(appModel.isAudioFileAvailable == false)
-
-                            Image(systemName: "forward.end.alt.fill")
+                        } label: {
+                            if appModel.playerMode == .music {
+                                Image(systemName: "hifispeaker")
+                            } else {
+                                Image(systemName: "radio")
+                            }
                         }
                         .padding()
-                        .glassBackgroundEffect()
-
-                        Spacer()
                     }
+                    .frame(width: 1000)
 
 
                     if appModel.immersiveSpaceState == .open &&

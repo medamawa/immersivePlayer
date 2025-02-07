@@ -20,14 +20,33 @@ struct ImmersiveView: View {
         RealityView { content in
             content.add(viewModel.rootEntity)
         }
+        .gesture(dragGesture)
         .onChange(of: appModel.playerMode, initial: true) { old, new in
             Task {
                 appModel.isTransitioningBetweenPlayerMode = true
+
                 try await viewModel.transitionPlayerMode(from: old, to: new)
+
+                try await Task.sleep(for: .seconds(1))  // wait for speaker to be loaded
+                guard let speakerEntity = viewModel.speakerEntity else { print("speaker not found"); return }
+                if let url = appModel.audioFileURL {
+                    print("loading audio")
+                    appModel.isAudioFileAvailable = false
+                    try await audio.prepareAudio(for: speakerEntity, with: url)
+                    appModel.isAudioFileAvailable = true
+                    print("loaded audio")
+                } else {
+                    print("loading audio")
+                    appModel.isAudioFileAvailable = false
+                    try await audio.prepareAudio(for: speakerEntity)
+                    appModel.isAudioFileAvailable = true
+                    print("loaded audio")
+                }
+
                 appModel.isTransitioningBetweenPlayerMode = false
             }
         }
-        .onChange(of: appModel.audioFileURL, initial: true) {
+        .onChange(of: appModel.audioFileURL) {
             print("URL changed")
             Task {
                 try await Task.sleep(for: .seconds(1))  // wait for speaker to be loaded
@@ -38,6 +57,7 @@ struct ImmersiveView: View {
                 try await audio.prepareAudio(for: speakerEntity, with: url)
                 appModel.isAudioFileAvailable = true
                 print("loaded audio")
+
                 switch appModel.audioPlayerState {
                 case .playing:
                     audio.play(from: appModel.currentTime)
@@ -62,5 +82,14 @@ struct ImmersiveView: View {
                 audio.pause()
             }
         }
+    }
+
+    private var dragGesture: some Gesture {
+        DragGesture()
+            .targetedToAnyEntity()
+            .onChanged { value in
+                value.entity.position = value.convert(value.location3D, from: .local, to: value.entity.parent!)
+                viewModel.speakerPosition = value.entity.position
+            }
     }
 }

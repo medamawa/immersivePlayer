@@ -5,18 +5,16 @@
 //  Created by Sogo Nishihara on 2025/02/04.
 //
 
+import SwiftUI
 import RealityKit
 
 extension ImmersiveViewModel {
-    func speakerInitialPosition() -> SIMD3<Float> {
-        return [0, 1.5, -1]
-    }
 
     func fadeOutSpeaker() async throws {
 
         guard let speakerEntity else { return }
 
-        speakerEntity.fadeOpacity(from: 1, to: 0, duration: 1)
+        speakerEntity.fadeOpacity(from: 1, to: 0, duration: 0.5)
         try await speakerAudio.fadeOut()
 
         try await Task.sleep(for: .seconds(1))
