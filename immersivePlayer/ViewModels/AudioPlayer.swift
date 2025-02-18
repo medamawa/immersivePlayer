@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-import RealityKit
 
 final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     private var audioPlayer: AVAudioPlayer?

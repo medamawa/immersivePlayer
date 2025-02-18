@@ -17,8 +17,6 @@ extension Entity {
         butterflyModel.name = "butterflyModel"
         butterfly.addChild(butterflyModel)
 
-//        butterfly.components.set(SpeedComponent())
-
         return butterfly
     }
 }

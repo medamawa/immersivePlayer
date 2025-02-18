@@ -8,7 +8,8 @@
     "objectMetadataList" : [
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -25,8 +26,7 @@
       },
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -64,8 +64,7 @@
     "objectMetadataList" : [
       [
         "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -73,7 +72,8 @@
       },
       [
         "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -98,8 +98,37 @@
       }
     ]
   },
+  "6FCDAD17-AD5C-4C0F-8924-E58E982333EE" : {
+    "objectMetadataList" : [
+      [
+        "6FCDAD17-AD5C-4C0F-8924-E58E982333EE",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "7CE00D54-87AF-4A64-A73C-50F33F81BEEE" : {
     "objectMetadataList" : [
+      [
+        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
+        "root",
+        "Cube_014"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
       [
         "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
         "root",
@@ -117,23 +146,6 @@
       {
         "isExpanded" : true,
         "isLocked" : false
-      },
-      [
-        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
-        "root",
-        "Cube_014"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
-        "root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
       }
     ]
   },
@@ -141,7 +153,7 @@
     "objectMetadataList" : [
       [
         "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
-        "radio"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -158,7 +170,7 @@
       },
       [
         "8E0B3EC5-3B4A-466D-BED4-0B0E048C3217",
-        "Root"
+        "radio"
       ],
       {
         "isExpanded" : true,
@@ -182,15 +194,6 @@
     "objectMetadataList" : [
       [
         "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
-        "Root",
-        "cd_player"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
         "Root"
       ],
       {
@@ -205,22 +208,29 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
+        "Root",
+        "butterfly"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
+        "Root",
+        "cd_player"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
   "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A" : {
     "objectMetadataList" : [
-      [
-        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
-        "Root",
-        "CDPlayer",
-        "env_light"
-      ],
-      {
-        "disallowsFraming" : true,
-        "isExpanded" : false,
-        "isLocked" : false
-      },
       [
         "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
         "Root",
@@ -235,7 +245,18 @@
       [
         "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
         "Root",
-        "cd_player"
+        "CDPlayer",
+        "env_light"
+      ],
+      {
+        "disallowsFraming" : true,
+        "isExpanded" : false,
+        "isLocked" : false
+      },
+      [
+        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
+        "Root",
+        "CDPlayer"
       ],
       {
         "isExpanded" : true,
@@ -244,7 +265,7 @@
       [
         "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
         "Root",
-        "CDPlayer"
+        "cd_player"
       ],
       {
         "isExpanded" : true,

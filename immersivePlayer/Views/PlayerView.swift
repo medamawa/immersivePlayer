@@ -140,6 +140,20 @@ struct PlayerView: View {
                 }
             }
 
+
+//            HStack(alignment: .bottom, spacing: 2) {
+//                ForEach(player.frequencyBands.indices, id: \.self) { index in
+//                    Rectangle()
+//                        .fill(Color.blue)
+//                        .frame(width: 4, height: CGFloat(max(1, player.bandAmplitudes[index])) * 100)
+//                        .cornerRadius(2)
+//                }
+//            }
+//            .padding()
+//            .background(Color.black)
+//            .cornerRadius(10)
+//            .shadow(radius: 5)
+
         }
         .padding()
         .animation(.easeInOut, value: appModel.isAudioFileAvailable)

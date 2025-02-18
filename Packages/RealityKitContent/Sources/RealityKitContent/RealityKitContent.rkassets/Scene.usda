@@ -54,6 +54,32 @@ def Xform "Root"
     {
         float3 xformOp:scale = (1, 1, 1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Normal"
+                token birthLocation = "Surface"
+                token emitterShape = "Sphere"
+                bool isSpawningEnabled = 0
+                token spawnOccasion = "OnDeath"
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float birthRate = 300
+                    float4 endColorA = (0.0013006331, 0.032195132, 1, 1)
+                    bool useEndColor = 1
+                    bool useEndColorRange = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                }
+            }
+        }
     }
 }
 
