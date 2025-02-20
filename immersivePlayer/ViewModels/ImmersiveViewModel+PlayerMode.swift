@@ -11,21 +11,21 @@ extension ImmersiveViewModel {
     func transitionPlayerMode(from previous: PlayerMode, to current: PlayerMode) async throws {
         switch (previous, current) {
         case (.music, .music):
-            let butterfly = try await spawnButterfly()
+            butterflyEntity = try await spawnButterfly()
             speakerEntity = try await spawnCDPlayer()
             
         case (.music, .radio):
-            let butterfly = try await spawnButterfly()
-            try await fadeOutSpeaker()
+            try await fadeOutEntities()
+            butterflyEntity = try await spawnButterfly()
             speakerEntity = try await spawnRadio()
 
         case (.radio, .music):
-            let butterfly = try await spawnButterfly()
-            try await fadeOutSpeaker()
+            try await fadeOutEntities()
+            butterflyEntity = try await spawnButterfly()
             speakerEntity = try await spawnCDPlayer()
 
         case (.radio, .radio):
-            let butterfly = try await spawnButterfly()
+            butterflyEntity = try await spawnButterfly()
             speakerEntity = try await spawnRadio()
         }
     }

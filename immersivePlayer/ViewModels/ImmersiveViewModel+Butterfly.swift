@@ -34,4 +34,21 @@ extension ImmersiveViewModel {
         return butterfly
     }
 
+    func fadeOutEntities() async throws {
+
+        guard let butterflyEntity else { return }
+        guard let speakerEntity else { return }
+
+        butterflyEntity.fadeOpacity(from: 1, to: 0, duration: 0.5)
+        speakerEntity.fadeOpacity(from: 1, to: 0, duration: 0.5)
+        try await speakerAudio.fadeOut()
+
+        try await Task.sleep(for: .seconds(1))
+
+        butterflyEntity.removeFromParent()
+        speakerEntity.removeFromParent()
+        self.butterflyEntity = nil
+        self.speakerEntity = nil
+    }
+
 }
