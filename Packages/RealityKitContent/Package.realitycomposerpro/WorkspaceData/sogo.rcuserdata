@@ -1,5 +1,5 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "BehaviorsPluginID",
   "openSceneRelativePaths" : [
     "Radio.usda",
     "objects\/radio.usdc",
@@ -1587,5 +1587,5 @@
   "sceneViewportBackgroundColors" : {
 
   },
-  "selectedSceneRelativePath" : "Plain.usda"
+  "selectedSceneRelativePath" : "Plane.usda"
 }

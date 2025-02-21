@@ -155,5 +155,12 @@ def Xform "Root"
             uniform token info:id = "RealityKit.AnimationLibrary"
         }
     }
+
+    def RealityKitTimeline "Timeline"
+    {
+        def RealityKitTrack "Track"
+        {
+        }
+    }
 }
 
