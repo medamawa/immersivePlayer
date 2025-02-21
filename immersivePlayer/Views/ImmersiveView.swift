@@ -24,6 +24,7 @@ struct ImmersiveView: View {
         .onChange(of: appModel.playerMode, initial: true) { old, new in
             Task {
                 appModel.isTransitioningBetweenPlayerMode = true
+                appModel.audioPlayerState = .stopped
 
                 try await viewModel.transitionPlayerMode(from: old, to: new)
 
@@ -35,13 +36,15 @@ struct ImmersiveView: View {
                     try await audio.prepareAudio(for: speakerEntity, with: url)
                     appModel.isAudioFileAvailable = true
                     print("loaded audio")
-                } else {
-                    print("loading audio")
-                    appModel.isAudioFileAvailable = false
-                    try await audio.prepareAudio(for: speakerEntity)
-                    appModel.isAudioFileAvailable = true
-                    print("loaded audio")
                 }
+//                when url does not exist
+//                else {
+//                    print("loading audio")
+//                    appModel.isAudioFileAvailable = false
+//                    try await audio.prepareAudio(for: speakerEntity)
+//                    appModel.isAudioFileAvailable = true
+//                    print("loaded audio")
+//                }
 
                 appModel.isTransitioningBetweenPlayerMode = false
             }

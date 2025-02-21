@@ -5,6 +5,13 @@
 //  Created by Sogo Nishihara on 2025/02/01.
 //
 
+// !! TODO !!
+// PlayerView起動時に再生可能になってしまっている
+// PlayerViewを閉じたらアプリを終了させたい
+// [DONE] Speaker切り替え時に音楽再生をやめる
+// [DONE] Speaker切り替え時の状態にinTransitionを追加
+
+
 import SwiftUI
 import RealityKit
 

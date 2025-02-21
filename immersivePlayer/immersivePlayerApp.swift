@@ -18,8 +18,8 @@ struct ImmersivePlayerApp: App {
 
     var body: some Scene {
         Group {
-            WindowGroup {
-                MenuView(appModel: appModel)
+            WindowGroup(id: "StartView") {
+                StartView(appModel: appModel)
                     .fixedSize()
             }
             .windowResizability(.contentSize)
@@ -60,6 +60,8 @@ struct ImmersivePlayerApp: App {
                     appModel.immersiveSpaceState = .inTransition
                     switch await openImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                     case .opened:
+                        dismissWindow(id: "StartView")
+                        openWindow(id: "AudioPlayer")
                         break
 
                     case .userCancelled, .error:

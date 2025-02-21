@@ -27,16 +27,16 @@ final class AudioStorage {
         audioController = audioSource.prepareAudio(audio)
     }
 
-    // When no URL
-    func prepareAudio(for speaker: Entity) async throws {
-        guard let audioSource = speaker.findEntity(named: "AudioSource-Speaker") else { return }
-        let audio = try await AudioFileResource(
-            named: "freeMusic1.mp3",
-            configuration: .init(shouldLoop: true)
-        )
-        stop()
-        audioController = audioSource.prepareAudio(audio)
-    }
+//    // When no URL
+//    func prepareAudio(for speaker: Entity) async throws {
+//        guard let audioSource = speaker.findEntity(named: "AudioSource-Speaker") else { return }
+//        let audio = try await AudioFileResource(
+//            named: "freeMusic1.mp3",
+//            configuration: .init(shouldLoop: true)
+//        )
+//        stop()
+//        audioController = audioSource.prepareAudio(audio)
+//    }
 
     func play(from currentTime: TimeInterval) {
         audioController?.seek(to: Duration.seconds(currentTime))

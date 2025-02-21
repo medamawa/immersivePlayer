@@ -125,6 +125,7 @@ struct PlayerView: View {
                                 Image(systemName: "radio")
                             }
                         }
+                        .disabled(appModel.isTransitioningBetweenPlayerMode == true)
                         .padding()
                     }
                     .frame(width: 1000)
@@ -172,6 +173,12 @@ struct PlayerView: View {
         }
         .onChange(of: player.isPlaying) { isPlaying in
             appModel.audioPlayerState = isPlaying ? .playing : .paused
+        }
+        .onChange(of: appModel.audioPlayerState) { isPlaying in
+            // This is occured when speaker is changed
+            if isPlaying == .stopped {
+                player.pause()
+            }
         }
 
     }
