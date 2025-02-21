@@ -25,6 +25,7 @@ final class ButterflyDanceSystem: System {
     func update(context: SceneUpdateContext) {
         let deltaTime = Float(context.deltaTime)
 
+
         for entity in context.entities(matching: Self.query, updatingSystemWhen: .rendering) {
             var motion = entity.components[CircularMotionComponent.self]!
 
@@ -45,9 +46,31 @@ final class ButterflyDanceSystem: System {
             // エンティティの位置を更新
             entity.position = [newX, newY, newZ]
 
+            // 進行方向のベクトル（XZ平面）
+            var tangent = SIMD3<Float>(-sin(motion.angle), 0, cos(motion.angle))
+
+            // Y方向の速度を加味（dy/dt）
+            let verticalSpeed = motion.verticalAmplitude * 2 * .pi * motion.verticalFrequency * cos(2 * .pi * motion.verticalFrequency * motion.time)
+            tangent.y = verticalSpeed
+
+            // 正規化
+            tangent = normalize(tangent)
+
+            // 法線ベクトル（右方向）
+            let upReference = SIMD3<Float>(0, 1, 0)
+            let right = normalize(cross(upReference, tangent))
+
+            // 上向きベクトルを再計算
+            let up = normalize(cross(tangent, right))
+
+            // 修正された回転行列（列ベクトルとして渡す）
+            let rotationMatrix = simd_float3x3(right, up, tangent)
+
+            // Rotationを適用（回転行列をクォータニオンに変換）
+            entity.orientation = simd_quatf(rotationMatrix)
+
             // 更新したコンポーネントを再設定
             entity.components.set(motion)
-
         }
     }
 }

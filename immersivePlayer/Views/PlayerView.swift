@@ -172,14 +172,17 @@ struct PlayerView: View {
                 break
             }
         }
-        .onChange(of: player.isPlaying) { isPlaying in
+        .onChange(of: player.isPlaying) { _, isPlaying in
             appModel.audioPlayerState = isPlaying ? .playing : .paused
         }
-        .onChange(of: appModel.audioPlayerState) { isPlaying in
+        .onChange(of: appModel.audioPlayerState) { _,  isPlaying in
             // This is occured when speaker is changed
             if isPlaying == .stopped {
                 player.pause()
             }
+        }
+        .onDisappear {
+            appModel.wantsToPresentImmersiveSpace = false
         }
 
     }

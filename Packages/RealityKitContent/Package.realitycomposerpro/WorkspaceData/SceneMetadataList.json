@@ -8,8 +8,7 @@
     "objectMetadataList" : [
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -26,7 +25,8 @@
       },
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -55,6 +55,18 @@
       }
     ]
   },
+  "1AE1211C-B33A-434C-BBD0-167614346F2D" : {
+    "objectMetadataList" : [
+      [
+        "1AE1211C-B33A-434C-BBD0-167614346F2D",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "1CBF3893-ABFD-408C-8B91-045BFD257808" : {
     "objectMetadataList" : [
 
@@ -64,7 +76,8 @@
     "objectMetadataList" : [
       [
         "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -72,8 +85,7 @@
       },
       [
         "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -114,16 +126,8 @@
     "objectMetadataList" : [
       [
         "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
-        "root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
         "root",
-        "Cube_014"
+        "Cube_008"
       ],
       {
         "isExpanded" : true,
@@ -140,8 +144,16 @@
       },
       [
         "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "7CE00D54-87AF-4A64-A73C-50F33F81BEEE",
         "root",
-        "Cube_008"
+        "Cube_014"
       ],
       {
         "isExpanded" : true,
@@ -194,25 +206,16 @@
     "objectMetadataList" : [
       [
         "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
-        "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
-        "Root",
-        "CDPlayer"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
         "Root",
         "butterfly"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -226,11 +229,46 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "B6E0AE98-4959-46D9-BDF5-3A2259C51F39",
+        "Root",
+        "CDPlayer"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
   "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A" : {
     "objectMetadataList" : [
+      [
+        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
+        "Root",
+        "cd_player"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
+        "Root",
+        "CDPlayer"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
       [
         "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
         "Root",
@@ -251,32 +289,6 @@
       {
         "disallowsFraming" : true,
         "isExpanded" : false,
-        "isLocked" : false
-      },
-      [
-        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
-        "Root",
-        "CDPlayer"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
-        "Root",
-        "cd_player"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "DCF48BAC-49EB-4D3F-B8A1-F89A3F19AF2A",
-        "Root"
-      ],
-      {
-        "isExpanded" : true,
         "isLocked" : false
       }
     ]

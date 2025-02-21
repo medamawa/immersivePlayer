@@ -11,8 +11,6 @@ import SwiftUI
 struct ImmersivePlayerApp: App {
     @State var appModel = AppModel()
 
-    @Environment(\.openWindow) var openWindow
-    @Environment(\.dismissWindow) var dismissWindow
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
 
@@ -60,8 +58,6 @@ struct ImmersivePlayerApp: App {
                     appModel.immersiveSpaceState = .inTransition
                     switch await openImmersiveSpace(id: appModel.immersivePlayerSpaceID) {
                     case .opened:
-                        dismissWindow(id: "StartView")
-                        openWindow(id: "AudioPlayer")
                         break
 
                     case .userCancelled, .error:

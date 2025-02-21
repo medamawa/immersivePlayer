@@ -13,7 +13,7 @@ extension Entity {
         let butterfly = ModelEntity()
         butterfly.name = "butterfly"
 
-        let butterflyModel = try await Entity(named: "Scene", in: realityKitContentBundle)
+        let butterflyModel = try await Entity(named: "Plane", in: realityKitContentBundle)
         butterflyModel.name = "butterflyModel"
         butterfly.addChild(butterflyModel)
 
