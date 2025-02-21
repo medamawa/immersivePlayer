@@ -30,6 +30,7 @@ struct PlayerView: View {
                     switch result {
                     case .success(let urls):
                         if let fileURL = urls.first {
+                            player.stop()
                             player.loadAudio(from: fileURL)
                             appModel.audioFileURL = fileURL
                             appModel.isAudioFileAvailable = true

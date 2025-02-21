@@ -6,8 +6,9 @@
 //
 
 // !! TODO !!
-// PlayerView起動時に再生可能になってしまっている
+// [DONE] PlayerView起動時に再生可能になってしまっている
 // PlayerViewを閉じたらアプリを終了させたい
+// [DONE] AudioFile切り替え時に再生を停止する
 // [DONE] Speaker切り替え時に音楽再生をやめる
 // [DONE] Speaker切り替え時の状態にinTransitionを追加
 
